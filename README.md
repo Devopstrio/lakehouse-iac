@@ -2,19 +2,18 @@
 
 <img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="150" alt="Lakehouse IaC Logo" />
 
-<h1>Lakehouse Infrastructure-as-Code (IaC) Platform</h1>
+<h1>Lakehouse IaC</h1>
 
-<p><strong>The Institutional-Grade Blueprint for Modern Data Lakehouse Architectures, Automated Governance, and Multi-Cloud Data Engineering</strong></p>
+<p><strong>The Institutional-Grade Blueprint for Modern Data Lakehouse Architectures, Automated Governance, and Multi-Cloud Data Engineering.</strong></p>
 
-[![Standard: Data--Lakehouse](https://img.shields.io/badge/Standard-Data--Lakehouse-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Compute: Apache--Spark](https://img.shields.io/badge/Compute-Apache--Spark-orange.svg?style=for-the-badge&labelColor=000000)]()
-[![Storage: Open--Table--Formats](https://img.shields.io/badge/Storage-Open--Table--Formats-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Standard: Lakehouse-Excellence](https://img.shields.io/badge/Standard-Lakehouse--Excellence-indigo.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: Data--Integrity](https://img.shields.io/badge/Focus-Data--Integrity-blue.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
 > **"Data is the fuel, but the Lakehouse is the refinery."** 
-> Lakehouse IaC is a flagship solution for modern Data Platform Engineering and Analytics organizations. By orchestrating unified storage tiers, Spark-based compute clusters, and automated metadata-driven pipelines, it ensures that institutional data is governed, high-quality, and ready for advanced analytics and machine learning.
+> **Lakehouse IaC** is an enterprise-grade platform designed to provide a secure, measurable, and highly automated foundation for global data operations. It orchestrates the complex lifecycle of lakehouse data—from multi-source unified ingestion and medallion-tier refinement to distributed compute orchestration and unified data governance.
 
 </div>
 
@@ -22,615 +21,262 @@
 
 ## 🏛️ Executive Summary
 
-The **Lakehouse IaC Platform** is a specialized flagship solution designed for Data Architects, Data Engineers, and Analytics Leaders. As organizations struggle with the divide between "Data Lakes" (flexible but messy) and "Data Warehouses" (structured but expensive), the Lakehouse architecture emerges as the unified standard. This platform addresses the complexity of provisioning, securing, and governing this hybrid environment using Infrastructure-as-Code.
+Fragmented data silos and manual ETL processes are strategic operational liabilities; lack of centralized data orchestration is a primary barrier to organizational AI/ML scaling. Organizations fail to achieve rapid data value not because of a lack of data, but because of fragmented data standards, lack of automated quality validation, and an inability to orchestrate complex data pipelines with operational precision.
 
-This platform provides a **Unified Data Intelligence Plane**. It demonstrates how to orchestrate institutional data—using **FastAPI**, **React 18**, **Apache Spark**, and **Delta/Iceberg**—to create a "Data-First" culture. By providing **Metadata-Driven Ingestion**, **End-to-End Lineage**, and **Automated Quality Validation**, it enables organizations to move from "Data Silos" to "Data Value."
-
----
-
-## 📉 The "Data Fragmentation" Problem
-
-Enterprises scaling data operations face existential challenges:
-- **Siloed Architectures**: Maintaining separate environments for BI (Warehouse) and AI/ML (Lake) leading to data duplication and inconsistency.
-- **Governance Gaps**: Difficulty enforcing consistent access controls, data masking, and lineage tracking across disparate storage and compute systems.
-- **Pipeline Fragility**: Manual, ad-hoc ETL pipelines that lack automated schema evolution, versioning, and validation.
-- **Cost Inefficiency**: Under-utilized compute clusters and expensive storage models without automated tiering and FinOps visibility.
+This platform provides the **Data Intelligence Plane**. It implements a complete **Enterprise Lakehouse-as-Code Framework**, enabling Data and Platform teams to manage global data assets as first-class citizens. By automating the transition of data through Medallion tiers (Bronze, Silver, Gold) and orchestrating real-time Spark compute clusters, we ensure that every organizational insight—from raw IoT streams to curated business reports—is validated by default, audited for history, and strictly aligned with institutional data frameworks.
 
 ---
 
-## 🚀 Strategic Drivers & Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Drivers
-- **Lakehouse Unification**: Implementing open table formats (Delta Lake, Iceberg) to enable ACID transactions and schema enforcement on low-cost object storage.
-- **Metadata-Driven Orchestration**: Automating pipeline generation and data movement based on a centralized catalog and metadata registry.
-- **Governance as Code**: Enforcing role-based and attribute-based access control (RBAC/ABAC) directly via the IaC platform.
+### 1. Principal Architecture: Global Lakehouse Ingestion & Intelligence Plane
+This diagram illustrates the end-to-end flow from multi-source unified ingestion and medallion refinement to distributed compute, data governance, and institutional data auditing.
 
-### 💰 Business Outcomes
-- **50% Faster Time-to-Insight**: Reducing the data engineering bottleneck through automated ingestion and standardized transformation patterns.
-- **100% Data Traceability**: Providing auditors and compliance teams with full end-to-end lineage for every data asset.
-- **Significant Infrastructure Savings**: Optimizing compute and storage costs through automated cluster scaling and data lifecycle management.
+```mermaid
+graph LR
+    %% Subgraph Definitions
+    subgraph DataIngress["Multi-Source Data Ingress"]
+        direction TB
+        SaaS_Data["SaaS & API Data"]
+        RDBMS_Data["Database Replication"]
+        IoT_Stream["High-Velocity IoT Streams"]
+    end
+
+    subgraph IntelligenceEngine["Data Intelligence Hub"]
+        direction TB
+        API["FastAPI Lakehouse Gateway"]
+        MedallionOrch["Medallion Tier Orchestrator"]
+        GovernanceEngine["Data Governance & RBAC"]
+        CatalogBot["Automated Data Catalog"]
+    end
+
+    subgraph ComputePlane["Distributed Compute Fleet"]
+        direction TB
+        SparkClusters["Spark / Databricks Clusters"]
+        QueryEngines["Snowflake / Athena Engines"]
+        QualityWorkers["Data Quality Validation Fleet"]
+    end
+
+    subgraph OperationsHub["Institutional Data Hub"]
+        direction TB
+        Scorecard["Data Maturity Score"]
+        Analytics["Ingestion & Query Stats"]
+        Audit["Forensic Data Metadata Lake"]
+    end
+
+    subgraph DevOps["Lakehouse-as-Code Framework"]
+        direction TB
+        TF["Terraform Data Modules"]
+        LineageBot["Automated Lineage Mapper"]
+        ChatOps["Data Approval Hub"]
+    end
+
+    %% Flow Arrows
+    DataIngress -->|1. Submit Raw Data| API
+    API -->|2. Ingest to Bronze| MedallionOrch
+    MedallionOrch -->|3. Cleanse to Silver| MedallionOrch
+    MedallionOrch -->|4. Aggregate to Gold| MedallionOrch
+    
+    MedallionOrch -->|5. Execute Compute| ComputePlane
+    ComputePlane -->|6. Notify Progress| ChatOps
+    API -->|7. Visualize Health| Scorecard
+    
+    Scorecard -->|8. Track Latency| Analytics
+    Scorecard -->|9. Record Query| Audit
+    
+    TF -->|10. Provision Hub| IntelligenceEngine
+    LineageBot -->|11. Inject Lineage| MedallionOrch
+    Audit -->|12. Improve Quality| ComputePlane
+
+    %% Styling
+    classDef ingress fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#e8eaf6,stroke:#1a237e,stroke-width:2px;
+    classDef compute fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px;
+
+    class DataIngress ingress;
+    class IntelligenceEngine intel;
+    class ComputePlane compute;
+    class OperationsHub ops;
+    class DevOps devops;
+```
+
+### 2. The Lakehouse Data Lifecycle Flow
+The continuous path of a data asset from initial ingestion and Bronze-tier landing to active Silver-tier cleansing, Gold-tier aggregation, and institutional forensic auditing.
+
+```mermaid
+graph LR
+    Ingest["Ingest (Bronze)"] --> Cleanse["Cleanse (Silver)"]
+    Cleanse --> Aggregate["Aggregate (Gold)"]
+    Aggregate --> Serve["Serve & Analyze"]
+    Serve --> Audit["Forensic Audit"]
+```
+
+### 3. Medallion Architecture Topology
+Strategically refining data through hierarchical storage tiers, providing a unified institutional view from raw technical streams to curated, business-ready insight models.
+
+```mermaid
+graph LR
+    Lake["Unified Data Lake"] -->|Refine| Bronze["Bronze: Raw Landing"]
+    Bronze -->|Refine| Silver["Silver: Cleansed & Versioned"]
+    Silver -->|Refine| Gold["Gold: Curated Insights"]
+    Gold --- Logic["Business Value Engine"]
+```
+
+### 4. Multi-Source Unified Ingestion Flow
+Handling complex data types—including batch SaaS ingestion, real-time database CDC, and high-velocity IoT streams—into a single, governed Lakehouse entry point.
+
+```mermaid
+graph TD
+    SaaS["SaaS (Salesforce/SAP)"] --> Hub["Unified Ingestion Hub"]
+    DB["DB (PostgreSQL/Oracle)"] --> Hub
+    IoT["IoT (Sensor Streams)"] --> Hub
+    Hub -->|Validate| Lake["Lakehouse Landing Zone"]
+```
+
+### 5. Distributed Compute & Query Orchestration Flow
+Managing the sequential execution of Spark, Databricks, or Snowflake query jobs, ensuring that compute resources are scaled dynamically to meet massive dataset processing demands.
+
+```mermaid
+graph LR
+    Job["Data Job"] -->|Scale| Spark["Spark Compute Cluster"]
+    Spark -->|Result| Sink["Data Lake Sink"]
+    Sink --- Monitor["Real-Time Compute Loop"]
+```
+
+### 6. Data Governance & Cataloging Flow
+Automatically managing metadata, end-to-end data lineage, and asset discovery across the global Lakehouse, ensuring institutional data integrity and visibility.
+
+```mermaid
+graph LR
+    Asset["Data Asset"] --> Bot["Cataloging Bot"]
+    Bot -->|Extract| Lineage["Lineage Metadata"]
+    Bot -->|Tag| Discovery["Searchable Catalog"]
+    Discovery --- Audit["Governance Audit Log"]
+```
+
+### 7. Institutional Data Maturity Scorecard
+Grading organizational performance based on key indicators: Data Quality Index, Processing Latency, and Cost Per Query Efficiency.
+
+```mermaid
+graph TD
+    Post["Data Health: 95%"] --> Risk["Quality Gap: 5%"]
+    Post --- C1["Query Latency (98%)"]
+    Post --- C2["Schema Compliance (100%)"]
+```
+
+### 8. Identity & RBAC for Data Governance
+Managing fine-grained access to sensitive data tiers, compute triggers, and audit logs between Data Scientists, Engineers, and Compliance Officers.
+
+```mermaid
+graph TD
+    Scientist["Data Scientist"] --> Hub["Query Gold Tier"]
+    Engineer["Data Engineer"] --> Exec["Manage Pipelines"]
+    Officer["Compliance Officer"] --> Audit["Verify Data Lineage"]
+```
+
+### 9. IaC Deployment: Lakehouse-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the data tracking hubs, compute clusters, and forensic metadata lakes.
+
+```mermaid
+graph LR
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["Lakehouse Control Plane"]
+    Engine --> Clusters["HA Compute Fleet"]
+```
+
+### 10. AIOps Data Anomaly & Drift Validation Flow
+Using advanced analytics to identify sudden schema changes, data quality drops, or unexpected volume spikes that could result in institutional data corruption.
+
+```mermaid
+graph LR
+    Stream["Data Stream"] --> Analyzer["Anomaly Detection Bot"]
+    Analyzer -->|Drift| Alert["Data Quality Alert"]
+    Analyzer -->|Normal| Pass["Status Optimal"]
+```
+
+### 11. Metadata Lake for Forensic Data Audit
+Storing long-term records of every ETL run, every query executed, and every access grant for institutional record-keeping, compliance auditing, and post-processing forensics.
+
+```mermaid
+graph LR
+    Run["Data Job Run"] --> Stream["Forensic Stream"]
+    Stream --> Lake["Data Metadata Lake"]
+    Lake --> Trends["Data Ingestion Trends"]
+```
 
 ---
 
-## 📐 Architecture Storytelling: 80+ Advanced Diagrams
-
-### 1. Executive Lakehouse Architecture
-*The orchestration of Storage Tiers, Spark Compute, and Governance.*
-```mermaid
-graph TD
-    subgraph "Lakehouse IaC Platform"
-        Portal[Data Dashboard]
-        Catalog[Enterprise Catalog]
-        Engine[Ingestion Engine]
-        Spark[Spark Compute Plane]
-        Gov[Governance Engine]
-    end
-
-    subgraph "Storage Tiers"
-        Bronze[Bronze: Raw / Landing]
-        Silver[Silver: Transformed / Delta]
-        Gold[Gold: Refined / Aggregated]
-    end
-
-    subgraph "Compute & Workflow"
-        Airflow[Airflow DAGs]
-        EMR[AWS EMR / Spark]
-    end
-
-    Portal --> Catalog
-    Engine --> Bronze
-    Spark --> Bronze
-    Spark --> Silver
-    Spark --> Gold
-    Airflow --> Spark
-    Gov --> Catalog
-    Catalog --> Gold
-```
-
-### 2. Metadata-Driven Ingestion Lifecycle
-*From raw source to Bronze landing zone.*
-```mermaid
-sequenceDiagram
-    participant Source as Source System
-    participant Reg as Metadata Registry
-    participant Ingest as Ingestion Worker
-    participant Lake as Bronze Tier
-    participant Cat as Catalog
-
-    Reg->>Ingest: Fetch Dataset Metadata
-    Ingest->>Source: Extract Data
-    Ingest->>Ingest: Apply Schema Validation
-    Ingest->>Lake: Write Parquet/Delta Files
-    Ingest->>Cat: Register Raw Partition
-    Cat-->>Reg: Sync Success State
-```
-
-### 3. The "Medallion" Processing Flow
-*Refining data through Bronze, Silver, and Gold tiers.*
-```mermaid
-graph LR
-    B[Bronze: Raw Staging] --> Clean[Data Cleaning & Validation]
-    Clean --> S[Silver: Integrated / Versioned]
-    S --> Agg[Aggregation & Business Logic]
-    Agg --> G[Gold: Analytics Ready]
-```
-
-### 4. Data Lineage Tracking Model
-```mermaid
-graph LR
-    S1[Sales DB] --> P1[Ingest Job]
-    P1 --> T1[bronze.sales_raw]
-    T1 --> P2[Spark Clean Job]
-    P2 --> T2[silver.sales_clean]
-    T2 --> P3[Agg Job]
-    P3 --> T3[gold.monthly_revenue]
-```
-
-### 5. Governance: RBAC & Data Masking
-```mermaid
-graph TD
-    User[Data Consumer] --> Policy{Governance Policy}
-    Policy -->|Allowed| Data[Table: Customer]
-    Policy -->|Masked| Mask[Column: PII_Email]
-    Policy -->|Denied| Error[Access Denied]
-```
-
-### 6. Schema Evolution Handling
-```mermaid
-graph LR
-    V1[Schema v1] --> Detect[Change Detected]
-    Detect --> Merge[Schema Merge / Evolution]
-    Merge --> V2[Schema v2]
-```
-
-### 7. Data Quality Validation Loop
-```mermaid
-graph TD
-    Data[New Batch] --> Check[Quality Rules]
-    Check -->|Pass| Target[Load to Silver]
-    Check -->|Fail| Quarantine[Quarantine / Alert]
-```
-
-### 8. Multi-Cloud Storage Abstraction
-```mermaid
-graph LR
-    Standard[Lakehouse API] --> AWS[AWS S3]
-    Standard --> Azure[Azure ADLS Gen2]
-    Standard --> GCP[GCP GCS]
-```
-
-### 9. Compute Cluster Lifecycle (Auto-Scaling)
-```mermaid
-graph LR
-    Queue[Pipeline Queue] --> Scale[Scale Out Nodes]
-    Scale --> Job[Execute Spark Job]
-    Job --> Finish[Scale In / Terminate]
-```
-
-### 10. Lakehouse Cost Visibility
-```mermaid
-graph LR
-    Metrics[Usage Telemetry] --> Cost[Cost Engine]
-    Cost --> Dash[Executive FinOps Dashboard]
-```
-
-### 11. Data lake unification
-```mermaid
-graph LR
-    D[Data] --> L[Lake]
-```
-
-### 12. Data warehouse unification
-```mermaid
-graph LR
-    D[Data] --> W[Ware]
-```
-
-### 13. Infrastructure provisioning
-```mermaid
-graph LR
-    I[Infra] --> P[Prov]
-```
-
-### 14. Data ingestion pipeline
-```mermaid
-graph LR
-    D[Data] --> I[Ingest]
-```
-
-### 15. Batch data processing
-```mermaid
-graph LR
-    B[Batch] --> P[Process]
-```
-
-### 16. Streaming data processing
-```mermaid
-graph LR
-    S[Stream] --> P[Process]
-```
-
-### 17. Data catalog flow
-```mermaid
-graph LR
-    D[Data] --> C[Catalog]
-```
-
-### 18. Data governance flow
-```mermaid
-graph LR
-    D[Data] --> G[Gov]
-```
-
-### 19. Data quality validation
-```mermaid
-graph LR
-    D[Data] --> Q[Qual]
-```
-
-### 20. Data security flow
-```mermaid
-graph LR
-    D[Data] --> S[Sec]
-```
-
-### 21. Data encryption flow
-```mermaid
-graph LR
-    D[Data] --> E[Enc]
-```
-
-### 22. RBAC access control
-```mermaid
-graph LR
-    R[RBAC] --> A[Access]
-```
-
-### 23. ABAC access control
-```mermaid
-graph LR
-    A[ABAC] --> A[Access]
-```
-
-### 24. Multi-tenant data architecture
-```mermaid
-graph LR
-    M[Multi] --> T[Tenant]
-```
-
-### 25. Data lineage tracking
-```mermaid
-graph LR
-    D[Data] --> L[Line]
-```
-
-### 26. Metadata management flow
-```mermaid
-graph LR
-    M[Meta] --> M[Manage]
-```
-
-### 27. Analytics integration flow
-```mermaid
-graph LR
-    A[Analy] --> I[Integ]
-```
-
-### 28. BI tool integration
-```mermaid
-graph LR
-    B[BI] --> T[Tool]
-```
-
-### 29. Cost optimization strategy
-```mermaid
-graph LR
-    C[Cost] --> O[Opti]
-```
-
-### 30. Data lifecycle management
-```mermaid
-graph LR
-    D[Data] --> L[Life]
-```
-
-### 31. Compliance audit logging
-```mermaid
-graph LR
-    C[Comp] --> A[Audit]
-```
-
-### 32. Multi-cloud deployment
-```mermaid
-graph LR
-    M[Multi] --> C[Cloud]
-```
-
-### 33. Delta Lake table format
-```mermaid
-graph LR
-    D[Delta] --> T[Table]
-```
-
-### 34. Apache Iceberg format
-```mermaid
-graph LR
-    A[Apache] --> I[Iceberg]
-```
-
-### 35. Apache Hudi format
-```mermaid
-graph LR
-    A[Apache] --> H[Hudi]
-```
-
-### 36. Ingestion engine pipeline
-```mermaid
-graph LR
-    I[Ingest] --> E[Engine]
-```
-
-### 37. Processing engine flow
-```mermaid
-graph LR
-    P[Process] --> E[Engine]
-```
-
-### 38. Governance engine flow
-```mermaid
-graph LR
-    G[Gov] --> E[Engine]
-```
-
-### 39. Analytics engine flow
-```mermaid
-graph LR
-    A[Analy] --> E[Engine]
-```
-
-### 40. Apache Spark compute
-```mermaid
-graph LR
-    A[Apache] --> S[Spark]
-```
-
-### 41. Apache Airflow workflow
-```mermaid
-graph LR
-    A[Apache] --> A[Airflow]
-```
-
-### 42. Kafka streaming integration
-```mermaid
-graph LR
-    K[Kafka] --> S[Stream]
-```
-
-### 43. Hive Metastore sync
-```mermaid
-graph LR
-    H[Hive] --> M[Meta]
-```
-
-### 44. AWS Glue catalog
-```mermaid
-graph LR
-    A[AWS] --> G[Glue]
-```
-
-### 45. Unity Catalog flow
-```mermaid
-graph LR
-    U[Unity] --> C[Catalog]
-```
-
-### 46. Storage tiering strategy
-```mermaid
-graph LR
-    S[Store] --> T[Tier]
-```
-
-### 47. Compute cluster lifecycle
-```mermaid
-graph LR
-    C[Comp] --> L[Life]
-```
-
-### 48. Networking architecture
-```mermaid
-graph LR
-    N[Net] --> A[Arch]
-```
-
-### 49. Monitoring: Prometheus
-```mermaid
-graph LR
-    M[Mon] --> P[Prom]
-```
-
-### 50. Monitoring: Grafana
-```mermaid
-graph LR
-    M[Mon] --> G[Graf]
-```
-
-### 51. Monitoring: Alerts
-```mermaid
-graph LR
-    M[Mon] --> A[Alert]
-```
-
-### 52. CI/CD: Build pipeline
-```mermaid
-graph LR
-    C[CICD] --> B[Build]
-```
-
-### 53. CI/CD: Test pipeline
-```mermaid
-graph LR
-    C[CICD] --> T[Test]
-```
-
-### 54. CI/CD: Deploy pipeline
-```mermaid
-graph LR
-    C[CICD] --> D[Deploy]
-```
-
-### 55. Lakehouse UI: Dashboard
-```mermaid
-graph LR
-    U[UI] --> D[Dash]
-```
-
-### 56. Lakehouse UI: Catalog
-```mermaid
-graph LR
-    U[UI] --> C[Catalog]
-```
-
-### 57. Lakehouse UI: Lineage
-```mermaid
-graph LR
-    U[UI] --> L[Lineage]
-```
-
-### 58. Lakehouse UI: Quality
-```mermaid
-graph LR
-    U[UI] --> Q[Quality]
-```
-
-### 59. API: Dataset creation
-```mermaid
-graph LR
-    A[API] --> D[Dataset]
-```
-
-### 60. API: Pipeline run
-```mermaid
-graph LR
-    A[API] --> P[Pipeline]
-```
-
-### 61. API: Catalog fetch
-```mermaid
-graph LR
-    A[API] --> C[Catalog]
-```
-
-### 62. API: Quality status
-```mermaid
-graph LR
-    A[API] --> Q[Quality]
-```
-
-### 63. Worker: Ingestion
-```mermaid
-graph LR
-    W[Worker] --> I[Ingest]
-```
-
-### 64. Worker: Processing
-```mermaid
-graph LR
-    W[Worker] --> P[Process]
-```
-
-### 65. Worker: Quality
-```mermaid
-graph LR
-    W[Worker] --> Q[Quality]
-```
-
-### 66. Worker: Governance
-```mermaid
-graph LR
-    W[Worker] --> G[Gov]
-```
-
-### 67. Worker: Analytics
-```mermaid
-graph LR
-    W[Worker] --> A[Analy]
-```
-
-### 68. Schema drift detection
-```mermaid
-graph LR
-    S[Schema] --> D[Drift]
-```
-
-### 69. Data versioning flow
-```mermaid
-graph LR
-    D[Data] --> V[Version]
-```
-
-### 70. Time travel query flow
-```mermaid
-graph LR
-    T[Time] --> T[Travel]
-```
-
-### 71. Column-level security
-```mermaid
-graph LR
-    C[Column] --> S[Sec]
-```
-
-### 72. Data masking strategy
-```mermaid
-graph LR
-    D[Data] --> M[Mask]
-```
-
-### 73. Multi-tenant isolation
-```mermaid
-graph LR
-    M[Multi] --> I[Iso]
-```
-
-### 74. Storage tiering flow
-```mermaid
-graph LR
-    S[Store] --> T[Tier]
-```
-
-### 75. Metadata-driven pipeline
-```mermaid
-graph LR
-    M[Meta] --> P[Pipeline]
-```
-
-### 76. Governance policy enforcement
-```mermaid
-graph LR
-    G[Gov] --> P[Policy]
-```
-
-### 77. Compliance audit trail
-```mermaid
-graph LR
-    C[Comp] --> A[Audit]
-```
-
-### 78. Value realization model
-```mermaid
-graph LR
-    V[Val] --> R[Real]
-```
-
-### 79. FinOps visibility flow
-```mermaid
-graph LR
-    F[FinOps] --> V[Vis]
-```
-
-### 80. Lakehouse ecosystem
-```mermaid
-graph LR
-    L[Lake] --> E[Eco]
-```
+## 🏛️ Core Lakehouse Pillars
+
+1.  **Unified Data Coordination**: Maximizing visibility by centralizing all data streams through a single institutional plane.
+2.  **Automated Quality Validation**: Eliminating "garbage in" scenarios through proactive schema and quality verification.
+3.  **Sequential Medallion Refinement**: Ensuring high-integrity insights through dependency-aware tier transitions.
+4.  **Zero-Trust Data Protection**: Automatically enforcing RBAC/ABAC and data masking across all storage tiers.
+5.  **Autonomous Processing Logic**: Guaranteeing data availability through automated pipeline recovery runbooks.
+6.  **Full Data Auditability**: Immutable recording of every ETL step and query for institutional forensics.
 
 ---
 
 ## 🛠️ Technical Stack & Implementation
 
-### Ingestion & Processing Engine
-- **Processing**: Python 3.11+ / PySpark / Apache Spark
-- **Orchestration**: Apache Airflow / TaskFlow API.
-- **Storage**: Delta Lake / Apache Iceberg on S3/ADLS.
+### Lakehouse Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI / PySpark.
+*   **Compute Hub**: Managed Spark (AWS EMR / Azure Databricks / GCP Dataproc).
+*   **Table Formats**: Delta Lake, Apache Iceberg, or Apache Hudi for ACID transactions.
+*   **Persistence**: PostgreSQL (Metadata Registry) and Redis (Live Job State).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege data access.
 
-### Frontend (Data Intelligence Hub)
-- **Framework**: React 18 / Vite
-- **Visuals**: Recharts (Pipeline Success, Throughput, Quality Scores).
-- **Theme**: Indigo, Slate, and Emerald (Institutional Data Aesthetics).
+### Data Intelligence Dashboard (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Indigo, Slate (Modern high-fidelity data aesthetic).
+*   **Visualization**: D3.js for lineage graphs and Recharts for data quality analytics.
 
-### Infrastructure
-- **Cloud**: AWS EMR / Azure Databricks / GCP Dataproc.
-- **Security**: RBAC/ABAC Governance, OIDC Identity.
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS or Azure Kubernetes Service (AKS) for management plane.
+*   **Workflow Hub**: Managed Apache Airflow or Prefect.
+*   **IaC**: Modular Terraform for deploying the lakehouse landing zone and compute fleet.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/data_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/compute`** | Spark & Query compute fleet | EMR, Databricks, Athena |
+| **`infrastructure/storage`** | Medallion storage tiers | S3, ADLS, GCS |
+| **`infrastructure/auditing`** | Forensic data sinks | S3, Athena, Quicksight |
 
 ---
 
 ## 🚀 Deployment Guide
 
-### Local Development
+### Local Principal Environment
 ```bash
-# Clone the repository
+# Clone the lakehouse platform
 git clone https://github.com/devopstrio/lakehouse-iac.git
 cd lakehouse-iac
 
-# Setup environment
+# Configure environment
 cp .env.example .env
 
-# Launch services
-make up
+# Launch the Lakehouse stack
+make init
+
+# Trigger a mock data ingestion and medallion refinement simulation
+make simulate-lakehouse
 ```
+
 Access the Data Intelligence Hub at `http://localhost:3000`.
 
 ---
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
